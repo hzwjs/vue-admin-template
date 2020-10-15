@@ -51,114 +51,80 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '对数平台', icon: 'dashboard' }
     }]
   },
-
   {
-    path: '/example',
-    component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
+    path: '/authorization',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        name: '授权扣款协议',
+        component: () => import('@/views/authorization/index'),
+        meta: { title: '授权扣款协议', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/getbiz',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '手动获取业务凭证',
+        component: () => import('@/views/getbiz/index'),
+        meta: { title: '手动获取业务凭证', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/uploadflow',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '上传财务流水',
+        component: () => import('@/views/uploadflow/index'),
+        meta: { title: '上传财务流水', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/uploadplan',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '上传还款计划',
+        component: () => import('@/views/uploadplan/index'),
+        meta: { title: '上传还款计划', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/downloadxlxs',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '获取对数结果',
+        component: () => import('@/views/downloadxlxs/index'),
+        meta: { title: '获取对数结果', icon: 'form' }
       }
     ]
   },
 
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
-  },
+  // {
+  //   path: 'external-link',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+  //       meta: { title: 'External Link', icon: 'link' }
+  //     }
+  //   ]
+  // },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }

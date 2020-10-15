@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <el-form ref="form" :model="form" label-width="120px">
+
       <el-form-item label="产品类型">
         <el-radio-group v-model="form.resource">
           <el-radio label="车e贷" />
@@ -9,64 +10,37 @@
       </el-form-item>
       <el-row>
         <el-col :span="8">
-          <el-form-item
-            label="姓名"
-            prop="type"
-            :rules="[
-      { required: true, message: '姓名不能为空'}
-    ]">
+          <el-form-item label="姓名">
             <el-input v-model="form.phoneNo" />
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
         <el-col :span="8">
-          <el-form-item
-            label="身份证号"
-            prop="type"
-            :rules="[
-      { required: true, message: '身份证号不能为空'}
-    ]">
+          <el-form-item label="身份证号">
             <el-input v-model="form.phoneNo" />
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
         <el-col :span="8">
-          <el-form-item
-            label="银行卡号"
-            prop="type"
-            :rules="[
-      { required: true, message: '姓名不能为空'}
-    ]">
+          <el-form-item label="银行卡号">
             <el-input v-model="form.phoneNo" />
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
       <el-col :span="8">
-      <el-form-item
-        label="手机号"
-        prop="type"
-        :rules="[
-      { required: true, message: '手机号不能为空'},
-      { type: 'number', message: '手机号必须为数字值'}
-    ]">
+      <el-form-item label="手机号">
         <el-input v-model="form.phoneNo" />
       </el-form-item>
       </el-col>
       </el-row>
       <el-row>
         <el-col :span="8">
-          <el-form-item
-            label="短信验证码"
-            prop="type"
-            :rules="[
-      { required: true, message: '短信验证码不能为空'},
-      { type: 'number', message: '短信验证码必须为数字值'}
-    ]">
+          <el-form-item label="短信验证码">
             <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
-              <el-button slot="append" type="primary" @click="onSubmit" >获取短信验证码</el-button>
+              <el-button slot="append" >获取短信验证码</el-button>
             </el-input>
           </el-form-item>
         </el-col>
